@@ -1,8 +1,14 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { ClerkProvider, RedirectToSignIn, SignedOut } from "@clerk/nextjs";
+import {
+  ClerkProvider,
+  RedirectToSignIn,
+  SignedIn,
+  SignedOut,
+} from "@clerk/nextjs";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
+import { cn } from "@/lib/utils";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -21,13 +27,12 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider afterSignInUrl="/" afterSignUpUrl="/">
-      <html lang="en" className={GeistSans.className}>
-        <body className="bg-background text-foreground">
-          <Header />
-          <div className="min-h-screen flex h-full">
-            <Sidebar />
-            <main className="p-4">{children}</main>
-          </div>
+      <html lang="en" className={cn(GeistSans.className, "")}>
+        <body className="flex text-foreground">
+          <Sidebar />
+          <main className="p-4 w-full">
+            <SignedIn>{children}</SignedIn>
+          </main>
         </body>
       </html>
       <SignedOut>
