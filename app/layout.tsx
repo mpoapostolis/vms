@@ -27,11 +27,14 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider afterSignInUrl="/" afterSignUpUrl="/">
-      <html lang="en" className={cn(GeistSans.className, "")}>
+      <html lang="en" className={cn(GeistSans.className, "dark bg-background")}>
         <body className="flex text-foreground">
           <Sidebar />
-          <main className="p-4 w-full">
-            <SignedIn>{children}</SignedIn>
+          <main className="w-full">
+            <Header />
+            <SignedIn>
+              <div className="p-4">{children}</div>
+            </SignedIn>
           </main>
         </body>
       </html>

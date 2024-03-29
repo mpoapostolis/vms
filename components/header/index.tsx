@@ -1,19 +1,28 @@
-import { SignedIn, UserButton } from "@clerk/nextjs";
-import Link from "next/link";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export function Header() {
   return (
-    <header className="flex w-full bg-secondary sticky top-0 items-center h-12 p-4 border-b">
-      <div className="flex items-center gap-4 lg:gap-8">
-        <Link className="text-xl font-extrabold tracking-tighter" href="/">
-          VMS
-        </Link>
-      </div>
-      <nav className="ml-auto flex items-center gap-4">
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-      </nav>
+    <header className="flex justify-end w-full bg-background sticky top-0 items-center h-12 p-4 border-b">
+      <Select>
+        <SelectTrigger className="w-80">
+          <SelectValue placeholder="Select" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="apple">Apple</SelectItem>
+          <SelectItem value="banana">Banana</SelectItem>
+          <SelectItem value="blueberry">Blueberry</SelectItem>
+          <SelectItem value="grapes">Grapes</SelectItem>
+          <SelectItem value="pineapple">Pineapple</SelectItem>
+        </SelectContent>
+      </Select>
     </header>
   );
 }

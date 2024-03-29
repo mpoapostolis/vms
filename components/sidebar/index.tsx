@@ -2,18 +2,10 @@
 
 import { Button } from "../ui/button";
 import {
-  Book,
-  Bot,
+  AreaChart,
   Calendar,
-  Code2,
-  Group,
   LayoutDashboard,
-  LifeBuoy,
-  Plane,
   Settings,
-  Settings2,
-  Ship,
-  SquareTerminal,
   Users2,
 } from "lucide-react";
 import {
@@ -56,6 +48,11 @@ const menuItems = [
     href: "/",
   },
   {
+    icon: <AreaChart className="size-5" />,
+    label: "Analytics",
+    href: "/analytics",
+  },
+  {
     icon: <Users2 className="size-5" />,
     label: "management",
     href: "/management",
@@ -65,16 +62,11 @@ const menuItems = [
     label: "bookings",
     href: "/bookings",
   },
-  {
-    icon: <LifeBuoy className="size-5" />,
-    label: "Support",
-    href: "/support",
-  },
 ];
 
 export function Sidebar() {
   return (
-    <aside className="inset-y  sticky top-0 left-0  h-screen flex w-fit  flex-col border-r">
+    <aside className="inset-y  sticky bg-background top-0 left-0  h-screen flex w-fit  flex-col border-r">
       <div className="flex items-center justify-center h-12  border-b">
         <Link href="/" className="text-xl font-extrabold tracking-tighter">
           VMS
