@@ -3,6 +3,7 @@
 import { Button } from "../ui/button";
 import {
   AreaChart,
+  BellIcon,
   Calendar,
   LayoutDashboard,
   Settings,
@@ -54,8 +55,13 @@ const menuItems = [
   },
   {
     icon: <Users2 className="size-5" />,
-    label: "management",
-    href: "/management",
+    label: "Members",
+    href: "/members",
+  },
+  {
+    icon: <BellIcon className="size-5" />,
+    label: "Notifications",
+    href: "/notifications",
   },
   {
     icon: <Calendar className="size-5" />,
